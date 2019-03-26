@@ -69,8 +69,11 @@ public class LinkedList {
 	        return ans;
 	}
 	
-	public static void sortList(Node head) {
-		
+	public static Node plusOne(Node head) {
+		if(head == null) {
+			return null;
+		}
+		return null;
 	}
 
 	

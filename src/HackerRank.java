@@ -20,27 +20,30 @@ import java.util.LinkedList;
 public class HackerRank {
 	
 	public static void main(String[] args) {
-		String S = "0110";
-		int N = 3;
-		for(int i = 1; i <= N; i++) {
-			String small = convert(i);
-			if(!S.contains(small)){
-				System.out.println("false");
-				break;
+		char[] str = new char[] {'t', 'h', 'e', ' ', 's', 'k', 'y', ' ', 'i', 's', ' ', 'b', 'l', 'u', 'e'};
+		reverse(str, 0, str.length-1);
+		int left = 0;
+		for(int i = 0; i < str.length; i++) {
+			if(str[i] == ' ') {
+				reverse(str, left, i - 1);
+				left = i + 1;
 			}
 		}
-		System.out.println("true");
-	}
-	
-	private static String convert(int N) {
-		StringBuilder sb = new StringBuilder();
-		while(N != 0) {
-			int r = N%2;
-			sb.append(String.valueOf(r));
-			N = N/2;
+		reverse(str, left, str.length-1);
+		for(char a: str) {
+			System.out.print(a + " ");
 		}
 		
-		return sb.reverse().toString();
+	}
+	
+	private static void reverse(char[] str, int left, int right) {
+		while(left < right) {
+			char c = str[right];
+			str[right] = str[left];
+			str[left] = c;
+			left++;
+			right--;
+		}
 	}
 }
 
