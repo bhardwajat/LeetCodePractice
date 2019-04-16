@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import static java.util.Arrays.*;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -18,32 +19,8 @@ import java.util.TreeSet;
 import java.util.LinkedList;
 
 public class HackerRank {
-	
 	public static void main(String[] args) {
-		char[] str = new char[] {'t', 'h', 'e', ' ', 's', 'k', 'y', ' ', 'i', 's', ' ', 'b', 'l', 'u', 'e'};
-		reverse(str, 0, str.length-1);
-		int left = 0;
-		for(int i = 0; i < str.length; i++) {
-			if(str[i] == ' ') {
-				reverse(str, left, i - 1);
-				left = i + 1;
-			}
-		}
-		reverse(str, left, str.length-1);
-		for(char a: str) {
-			System.out.print(a + " ");
-		}
 		
-	}
-	
-	private static void reverse(char[] str, int left, int right) {
-		while(left < right) {
-			char c = str[right];
-			str[right] = str[left];
-			str[left] = c;
-			left++;
-			right--;
-		}
 	}
 }
 
